@@ -1,0 +1,22 @@
+.pagination {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.page-number {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-number:hover {
+  background-color: #555;
+}
+
+.page-number.active {
+  background-color: #000;
+}

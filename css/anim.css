@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to right, blue, purple, yellow);
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Inicialmente desplazado */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.aligned {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    color: transparent !important;
+}
+
+a.game {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+a.game img {
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+a.game:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+a.game:hover::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.05); opacity: 0; }
+}
+
+span {
+    display: block;
+    margin-top: 10px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    z-index: 9999;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading span {
+    display: inline-block;
+    animation: flames 1s infinite;
+}
+
+@keyframes flames {
+    0% { color: blue; transform: translateY(0); }
+    50% { color: yellow; transform: translateY(-10px); }
+    100% { color: purple; transform: translateY(0); }
+}
+
+#loading::after {
+    content: '...';
+    animation: dots 1s infinite;
+}
+
+@keyframes dots {
+    0%, 100% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}

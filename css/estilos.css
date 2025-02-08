@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #337c;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1a053c; /* Fondo morado oscuro */
+  color: #a020f0; /* Morado gaming para el texto */
+  text-align: center;
+  padding: 1em 0;
+  animation: fuego 5s infinite; /* Animación de fuego */
+}
+
+@keyframes fuego {
+  0% {
+    text-shadow: 0 0 10px #8a2be2, 0 0 20px #9400d3, 0 0 30px #9932cc; /* Sombras iniciales */
+  }
+  50% {
+    text-shadow: 0 0 20px #9400d3, 0 0 30px #9932cc, 0 0 40px #8a2be2; /* Sombras intermedias */
+  }
+  100% {
+    text-shadow: 0 0 10px #9932cc, 0 0 20px #8a2be2, 0 0 30px #9400d3; /* Sombras finales */
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+.juegos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab-button {
+
+  color: red;
+display: inline-block;
+margin: 10px;
+transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+}
+
+.juegos a {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+}
+
+.juegos a img {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.juegos a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.juegos img {
+  width: 128px;
+  height: 128px;
+  display: block;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5 {
+  color: red; /* Color gris oscuro como ejemplo */
+}
+
+.juegos span {
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+footer {
+  background-color: #1a053c;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  animation: slideInUp 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
