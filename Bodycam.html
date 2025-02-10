@@ -14,20 +14,20 @@
         <div class="descripcion">
             <style>
 body {
-  margin: 0; /* Elimina los márgenes del cuerpo */
-  overflow: hidden; /* Evita barras de desplazamiento */
+  margin: 0;
 }
 
 .fondo-juego {
-  position: fixed; /* Fija la imagen de fondo a la pantalla */
+  position: absolute; /* Cambiamos a absolute */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-image: url("Images/Fondos/Bodycam.png");
-  background-size: cover; /* Cubre todo el fondo con la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center; /* Centra la imagen en el fondo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Envía la imagen al fondo */
 }
 </style>
 </head>
