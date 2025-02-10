@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UFT-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Icon.png" type="image/png">
     <title>RX580 Pagina Web</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/paginacion.css">
@@ -12,22 +11,21 @@
     <link rel="stylesheet" href="css/other.css">
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/redes.css">
-    <link rel="stylesheet" href="css/gmail.css">
 </head>
 <body>
     <div id="loading">
-        <span>Bienvenido, <span id="nombreUsuario">Usuario</span></span>
+        <span>Bienvenido</span>
     </div>
-    
+
     <header>
         <h1>Sitio oficial de descargas de RX580</h1>
     </header>
 
     <main>
+<link rel="icon" href="Icon.png" type="image/png">
         <div class="tabs">
             <button class="tab-button" onclick="openTab('games')">Juegos</button>
             <button class="tab-button" onclick="openTab('videos')"><a href="mis_videos.html" class="videos-link">Videos</a></button>
-            <button class="tab-button" onclick="openTab('projectsandgames')"><a href="Projects.html" class="videos-link">Mis Proyectos y Juegos</a></button>
         </div>
 
         <div id="games" class="tab-content">
@@ -64,8 +62,18 @@
                     <img src="Images/RoN.jpg" alt="Ready or Not">
                     <span>Ready or Not</span>
                 </a>
+                </a>
+                <a href="Miside.html" class="game">
+                    <img src="Miside.jpg" alt="MiSide">
+                    <span>MiSide</span>
+                </a>
             </div>
             <div id="pagination" class="pagination"></div>
+        </div>
+
+        <div id="videos" class="tab-content">
+            <h2>Mis videos de YouTube</h2>
+            <div id="youtube-videos"></div>
         </div>
 
         <div class="social-links">
@@ -76,26 +84,18 @@
         </div>
     </main>
 
-    <header>
-        <h1>Sitio oficial de descargas de RX580</h1>
-    </header>
-
-    <main>
-        </main>
-
     <footer>
-        <p>Â© 2024-2025 Tu Sitio de Juegos</p>
+        <p>© 2024 Tu Sitio de Juegos</p>
     </footer>
 
-    <button id="muteButton">Mutear MÃºsica</button>
+    <button id="muteButton">Mutear Música</button>
 
-    <script src="js/script.js"></script> 
-    <script src="js/paginacion.js"></script>
+    <script src="js/script.js"></script> <script src="js/paginacion.js"></script>
     <script src="js/busqueda.js"></script>
     <script src="js/other.js"></script>
     <script src="js/cockies.js"></script>
     <script src="js/anim.js"></script>
     <script src="js/music.js"></script>
-    <script src="js/gmail.js"></script>
+
 </body>
 </html>
