@@ -18,7 +18,7 @@ body {
 }
 
 .fondo-juego {
-  position: absolute; /* Cambiamos a absolute */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -27,8 +27,16 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1; /* Envía la imagen al fondo */
-}
+  z-index: -1;
+    }
+<script>
+  function ajustarAlturaBody() {
+    document.body.style.height = window.innerHeight + "px";
+  }
+
+  window.addEventListener('resize', ajustarAlturaBody);
+  ajustarAlturaBody(); // Ajustar al cargar la página
+</script
 </style>
 </head>
 <body>
