@@ -12,7 +12,7 @@
     </header>
     <main>
         <div class="descripcion">
-            <style>
+           <style>
 body {
   margin: 0;
 }
@@ -27,16 +27,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1;
-    }
-<script>
-  function ajustarAlturaBody() {
-    document.body.style.height = window.innerHeight + "px";
-  }
+  z-index: -1; /* Imagen de fondo */
+}
 
-  window.addEventListener('resize', ajustarAlturaBody);
-  ajustarAlturaBody(); // Ajustar al cargar la página
-</script
+.contenido { /* Nuevo contenedor para el contenido */
+  position: relative; /* Importante para el z-index */
+  z-index: 1; /* El contenido estará por encima de la imagen */
+  /* Otros estilos para el contenedor de contenido si los necesitas */
+  padding: 20px; /* Ejemplo de padding */
+}
+
+/* Resto de tus estilos CSS (si los tienes) */
 </style>
 </head>
 <body>
