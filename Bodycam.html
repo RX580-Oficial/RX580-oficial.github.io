@@ -12,7 +12,29 @@
     </header>
     <main>
         <div class="descripcion">
-            <img src="Images/Fondos/Bodycam.png" alt="Fondo del Juego">
+            <style>
+body {
+  margin: 0; /* Elimina los márgenes del cuerpo */
+  overflow: hidden; /* Evita barras de desplazamiento */
+}
+
+.fondo-juego {
+  position: fixed; /* Fija la imagen de fondo a la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Images/Fondos/Bodycam.png");
+  background-size: cover; /* Cubre todo el fondo con la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el fondo */
+}
+</style>
+</head>
+<body>
+
+<div class="fondo-juego">
+  </div>
             <h2>Bodycam</h2>
             <p>Bodycam es un juego de acción en primera persona que te sumerge en intensas situaciones 
                policiales y de combate. Experimenta la adrenalina de llevar una cámara corporal y 
