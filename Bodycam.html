@@ -5,80 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bodycam Descargas</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex; /* Usamos flexbox para el diseño */
+            flex-direction: column; /* Contenido en columna */
+            min-height: 100vh; /* Asegura que el body cubra toda la pantalla */
+        }
+
+        .fondo-juego {
+            position: fixed; /* La imagen de fondo fija */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("Images/Fondos/Bodycam.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: -1; /* Debajo del contenido */
+        }
+
+        main {
+            flex: 1; /* El main ocupa el espacio disponible */
+            padding: 20px; /* Espacio alrededor del contenido principal */
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente para el contenido */
+        }
+
+        footer {
+            background-color: #333; /* Color de fondo para el footer */
+            color: white; /* Color de texto para el footer */
+            text-align: center; /* Texto centrado en el footer */
+            padding: 10px; /* Espacio alrededor del texto del footer */
+        }
+    </style>
 </head>
 <body>
+
+<div class="fondo-juego"></div>
+
     <header>
         <h1>Bodycam</h1>
     </header>
+
     <main>
-        <div class="descripcion">
-           <style>
-body {
-  margin: 0;
-}
-
-.fondo-juego {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("Images/Fondos/Bodycam.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1; /* Imagen de fondo */
-}
-
-.contenido { /* Nuevo contenedor para el contenido */
-  position: relative; /* Importante para el z-index */
-  z-index: 1; /* El contenido estará por encima de la imagen */
-  /* Otros estilos para el contenedor de contenido si los necesitas */
-  padding: 20px; /* Ejemplo de padding */
-}
-
-/* Resto de tus estilos CSS (si los tienes) */
-</style>
-</head>
-<body>
-
-<div class="fondo-juego">
-  </div>
+        <div class="contenido">
             <h2>Bodycam</h2>
-            <p>Bodycam es un juego de acción en primera persona que te sumerge en intensas situaciones 
-               policiales y de combate. Experimenta la adrenalina de llevar una cámara corporal y 
-               capturar cada momento de tus misiones. Enfréntate a desafíos tácticos, toma decisiones 
-               rápidas y vive la emoción de la acción en primera línea.</p>
+            <p>Bodycam es un juego de acción en primera persona que te sumerge en intensas situaciones
+                policiales y de combate. Experimenta la adrenalina de llevar una cámara corporal y
+                capturar cada momento de tus misiones. Enfréntate a desafíos tácticos, toma decisiones
+                rápidas y vive la emoción de la acción en primera línea.</p>
 
             <h2>Requisitos del Sistema</h2>
 
             <h3>Mínimos:</h3>
             <p>Sistema Operativo: Windows 10/11 (64 bits)<br>
-               Procesador: AMD Ryzen 7 3700X o Intel Core i7-9700K<br>
-               Memoria: 8 GB de RAM<br>
-               Gráficos: AMD Radeon RX 5700 (8 GB) o NVIDIA GeForce RTX 2070 (8 GB)<br>
-               Red: Conexión de banda ancha a Internet<br>
-               DirectX: Versión 11<br>
-               Almacenamiento: 50 GB de espacio disponible<br>
-               Notas adicionales: SSD Recommended</p>
+                Procesador: AMD Ryzen 7 3700X o Intel Core i7-9700K<br>
+                Memoria: 8 GB de RAM<br>
+                Gráficos: AMD Radeon RX 5700 (8 GB) o NVIDIA GeForce RTX 2070 (8 GB)<br>
+                Red: Conexión de banda ancha a Internet<br>
+                DirectX: Versión 11<br>
+                Almacenamiento: 50 GB de espacio disponible<br>
+                Notas adicionales: SSD Recommended</p>
 
             <h3>Recomendados:</h3>
             <p>Sistema Operativo: Windows 10/11 (64 bits)<br>
-               Procesador: AMD Ryzen 7 3800X o Intel Core i7-10700K<br>
-               Memoria: 16 GB de RAM<br>
-               Gráficos: AMD Radeon RX 6600 XT (8 GB) o NVIDIA GeForce RTX 3060 (12 GB)<br>
-               Red: Conexión de banda ancha a Internet<br>
-               DirectX: Versión 12<br>
-               Almacenamiento: 50 GB de espacio disponible<br>
-               Notas adicionales: SSD Recommended</p>
+                Procesador: AMD Ryzen 7 3800X o Intel Core i7-10700K<br>
+                Memoria: 16 GB de RAM<br>
+                Gráficos: AMD Radeon RX 6600 XT (8 GB) o NVIDIA GeForce RTX 3060 (12 GB)<br>
+                Red: Conexión de banda ancha a Internet<br>
+                DirectX: Versión 12<br>
+                Almacenamiento: 50 GB de espacio disponible<br>
+                Notas adicionales: SSD Recommended</p>
 
-<h4>INSTRUCCIONES</h4>
-<br>Descargar el juego</br>
-<br>Descomprimir carpeta RAR</br>
-<br>Iniciar sesión en STEAM con su cuenta</br>
-<br>Ejecutar el juego como administrador</br>
-<br>Usted puede jugar con amigos que también descarguen el juego.</br>
-<br>Contraseña para descomprimir Torrent: online-fix.me</br>
+            <h4>INSTRUCCIONES</h4>
+            <br>Descargar el juego</br>
+            <br>Descomprimir carpeta RAR</br>
+            <br>Iniciar sesión en STEAM con su cuenta</br>
+            <br>Ejecutar el juego como administrador</br>
+            <br>Usted puede jugar con amigos que también descarguen el juego.</br>
+            <br>Contraseña para descomprimir Torrent: online-fix.me</br>
 
             <div class="media">
                 <a href="https://playpaste.com/pivi/?v=jTI" download>
@@ -87,16 +93,15 @@ body {
             </div>
 
             <div class="media">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/z6m7XblMNeA" 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/z6m7XblMNeA"
                         frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </main>
-    <br><br>
-    <br><br>
-    <br><br>
+
     <footer>
         <p>© RX580 Sitio Oficial</p>
     </footer>
+
 </body>
 </html>
