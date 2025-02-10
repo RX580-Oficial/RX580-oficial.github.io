@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UFT-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RX580 Pagina Web</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/paginacion.css">
+    <link rel="stylesheet" href="css/tooltip.css">
+    <link rel="stylesheet" href="css/cockies.css">
+    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="css/anim.css">
+    <link rel="stylesheet" href="css/redes.css">
+</head>
+<body>
+    <div id="loading">
+        <span>Bienvenido</span>
+    </div>
+
+    <header>
+        <h1>Sitio oficial de descargas de RX580</h1>
+    </header>
+
+    <main>
+<link rel="icon" href="Icon.png" type="image/png">
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('games')">Juegos</button>
+            <button class="tab-button" onclick="openTab('videos')"><a href="mis_videos.html" class="videos-link">Videos</a></button>
+        </div>
+
+        <div id="games" class="tab-content">
+            <h2>Mis juegos</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Buscar juegos...">
+            </div>
+            <div id="juegos" class="juegos">
+                <a href="FS2004.html" class="game">
+                    <img src="Images/FS2004.jpg" alt="Flight Simulator 2004">
+                    <span>Flight Simulator 2004</span>
+                </a>
+                <a href="SWAT4.html" class="game">
+                    <img src="Images/SWAT4.jpg" alt="SWAT4">
+                    <span>SWAT4</span>
+                </a>
+                <a href="GM.html" class="game">
+                    <img src="Images/GM.jpg" alt="Geometry Dash">
+                    <span>Geometry Dash</span>
+                </a>
+                <a href="RE4.html" class="game">
+                    <img src="Images/RE4.jpg" alt="Resident Evil 4">
+                    <span>Resident Evil 4</span>
+                </a>
+                <a href="Bodycam.html" class="game">
+                    <img src="Images/Bodycam.jpg" alt="Bodycam">
+                    <span>Bodycam</span>
+                </a>
+                <a href="SLS.html" class="game">
+                    <img src="Images/SLS.jpg" alt="Streamer Life Simulator 2">
+                    <span>Streamer Life Simulator 2</span>
+                </a>
+                <a href="RoN.html" class="game">
+                    <img src="Images/RoN.jpg" alt="Ready or Not">
+                    <span>Ready or Not</span>
+                </a>
+                </a>
+                <a href="Miside.html" class="game">
+                    <img src="Miside.jpg" alt="MiSide">
+                    <span>MiSide</span>
+                </a>
+            </div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+
+        <div id="videos" class="tab-content">
+            <h2>Mis videos de YouTube</h2>
+            <div id="youtube-videos"></div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/groups/955726202554297" target="_blank"><img src="Images/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://www.twitch.tv/rx580_tuning" target="_blank"><img src="Images/twitch-icon.png" alt="Twitch"></a>
+            <a href="https://www.tiktok.com/@ghostsilva28" target="_blank"><img src="Images/tiktok-icon.png" alt="TikTok"></a>
+            <a href="https://www.youtube.com/@RX580Gaming" target="_blank"><img src="Images/youtube-icon.png" alt="YouTube"></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Tu Sitio de Juegos</p>
+    </footer>
+
+    <button id="muteButton">Mutear Música</button>
+
+    <script src="js/script.js"></script> <script src="js/paginacion.js"></script>
+    <script src="js/busqueda.js"></script>
+    <script src="js/other.js"></script>
+    <script src="js/cockies.js"></script>
+    <script src="js/anim.js"></script>
+    <script src="js/music.js"></script>
+
+</body>
+</html>
