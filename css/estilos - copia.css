@@ -4,6 +4,13 @@ body {
   margin: 0;
   padding: 0;
 }
+body {
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0; /* Elimina márgenes predeterminados del cuerpo */
+}
 
 header {
   background-color: #333;
