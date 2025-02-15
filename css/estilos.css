@@ -1,112 +1,124 @@
+/* estilos.css */
+
 body {
-  font-family: Arial, sans-serif; /* Mantiene la fuente */
-  background-color: #f4f4f4; /* Mantiene el color de fondo (si lo deseas) */
-  background-size: cover; /* Ajustar imagen */
-  background-position: center center; /* Posición de la imagen */
-  background-repeat: no-repeat; /* Evitar repetición */
-  margin: 0; /* Eliminar márgenes */
-  padding: 0; /* Eliminar padding (si lo deseas) */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("background.png"); /* Ruta a tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Fondo */
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Contenido encima de la imagen */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% del viewport */
+    color: white; /* Color de texto predeterminado (puedes ajustarlo) */
 }
 
 header {
-  background-color: #1a053c; /* Fondo morado oscuro */
-  color: #a020f0; /* Morado gaming para el texto */
-  text-align: center;
-  padding: 1em 0;
-  animation: fuego 5s infinite; /* Animación de fuego */
+    background-color: #1a053c;
+    color: #a020f0;
+    text-align: center;
+    padding: 1em 0;
+    animation: fuego 5s infinite;
 }
 
 @keyframes fuego {
-  0% {
-    text-shadow: 0 0 10px #8a2be2, 0 0 20px #9400d3, 0 0 30px #9932cc; /* Sombras iniciales */
-  }
-  50% {
-    text-shadow: 0 0 20px #9400d3, 0 0 30px #9932cc, 0 0 40px #8a2be2; /* Sombras intermedias */
-  }
-  100% {
-    text-shadow: 0 0 10px #9932cc, 0 0 20px #8a2be2, 0 0 30px #9400d3; /* Sombras finales */
-  }
+    0% {
+        text-shadow: 0 0 10px #8a2be2, 0 0 20px #9400d3, 0 0 30px #9932cc;
+    }
+    50% {
+        text-shadow: 0 0 20px #9400d3, 0 0 30px #9932cc, 0 0 40px #8a2be2;
+    }
+    100% {
+        text-shadow: 0 0 10px #9932cc, 0 0 20px #8a2be2, 0 0 30px #9400d3;
+    }
 }
 
 main {
-  padding: 20px;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto;
 }
 
 .juegos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .tab-button {
-
-  color: red;
-display: inline-block;
-margin: 10px;
-transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+    color: red;
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
 }
 
 .juegos a {
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
 }
 
 .juegos a img {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
 }
 
 .juegos a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .juegos img {
-  width: 128px;
-  height: 128px;
-  display: block;
-  margin: 0 auto;
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
-  color: red; /* Color gris oscuro como ejemplo */
+    color: red;
 }
 
 .juegos span {
-  display: block;
-  margin-top: 5px;
-  text-align: center;
-  font-size: 14px;
-  color: #333;
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
 }
 
 footer {
-  background-color: #1a053c;
-  color: #fff;
-  text-align: center;
-  padding: 1em 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  animation: slideInUp 1s forwards;
+    background-color: #1a053c;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
