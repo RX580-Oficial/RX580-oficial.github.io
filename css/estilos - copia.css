@@ -1,9 +1,17 @@
-/* estilos.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #337c;
     margin: 0;
     padding: 0;
+    background-image: url("background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Fondo por debajo */
+}
+
+header, main, footer {
+    position: relative; /* Necesario para z-index */
+    z-index: 1; /* Encima del fondo */
 }
 
 header {
