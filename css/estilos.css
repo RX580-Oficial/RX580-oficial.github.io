@@ -1,124 +1,97 @@
-/* estilos.css */
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+  font-family: Arial, sans-serif; /* Mantiene la fuente */
+  background-color: #f4f4f4; /* Mantiene el color de fondo (si lo deseas) */
+  background-repeat: no-repeat; /* Evitar repetición */
+  margin: 0; /* Eliminar márgenes */
+  padding: 0; /* Eliminar padding (si lo deseas) */
+  overflow-x: hidden;
 }
-
 .background-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("background.png"); /* Ruta a tu imagen */
+    background-image: url("background.png");
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1; /* Fondo */
-}
-
-.content {
-    position: relative;
-    z-index: 1; /* Contenido encima de la imagen */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que el contenido ocupe al menos el 100% del viewport */
-    color: white; /* Color de texto predeterminado (puedes ajustarlo) */
+    z-index: -1;
 }
 
 header {
-    background-color: #1a053c;
-    color: #a020f0;
-    text-align: center;
-    padding: 1em 0;
-    animation: fuego 5s infinite;
-}
-
-@keyframes fuego {
-    0% {
-        text-shadow: 0 0 10px #8a2be2, 0 0 20px #9400d3, 0 0 30px #9932cc;
-    }
-    50% {
-        text-shadow: 0 0 20px #9400d3, 0 0 30px #9932cc, 0 0 40px #8a2be2;
-    }
-    100% {
-        text-shadow: 0 0 10px #9932cc, 0 0 20px #8a2be2, 0 0 30px #9400d3;
-    }
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
 }
 
 main {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin: 20px auto;
+  padding: 20px;
 }
 
 .juegos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.tab-button {
-    color: red;
-    display: inline-block;
-    margin: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .juegos a {
-    display: inline-block;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
 }
 
 .juegos a img {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
 .juegos a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .juegos img {
-    width: 128px;
-    height: 128px;
-    display: block;
-    margin: 0 auto;
-}
-
-h1, h2, h3, h4, h5 {
-    color: red;
+  width: 128px;
+  height: 128px;
+  display: block;
+  margin: 0 auto;
 }
 
 .juegos span {
-    display: block;
-    margin-top: 5px;
-    text-align: center;
-    font-size: 14px;
-    color: #333;
+  display: block;
+  margin-top: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
 }
 
 footer {
-    background-color: #1a053c;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
-    width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  animation: slideInUp 1s forwards;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
