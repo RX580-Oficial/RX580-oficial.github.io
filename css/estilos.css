@@ -1,10 +1,8 @@
 body {
   font-family: Arial, sans-serif; /* Mantiene la fuente */
   background-color: #f4f4f4; /* Mantiene el color de fondo (si lo deseas) */
-  background-repeat: no-repeat; /* Evitar repetición */
   margin: 0; /* Eliminar márgenes */
   padding: 0; /* Eliminar padding (si lo deseas) */
-  overflow-x: hidden;
 }
 .background-image {
     position: fixed;
@@ -14,7 +12,6 @@ body {
     height: 100%;
     background-image: url("background.png");
     background-size: cover;
-    background-repeat: no-repeat;
     z-index: -1;
 }
 
