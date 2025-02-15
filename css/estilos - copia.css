@@ -1,12 +1,8 @@
 body {
-  font-family: Arial, sans-serif; /* Mantiene la fuente */
-  background-color: #f4f4f4; /* Mantiene el color de fondo (si lo deseas) */
-  background-image: url("background.png"); /* Imagen de fondo */
-  background-size: cover; /* Ajustar imagen */
-  background-position: center center; /* Posición de la imagen */
-  background-repeat: no-repeat; /* Evitar repetición */
-  margin: 0; /* Eliminar márgenes */
-  padding: 0; /* Eliminar padding (si lo deseas) */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 header {

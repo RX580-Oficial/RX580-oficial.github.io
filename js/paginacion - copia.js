@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const itemsPerPage = 40; // 8 elementos por lÃ­nea * 5 lÃ­neas
+  const itemsPerPage = 40; // 8 elementos por línea * 5 líneas
   const container = document.getElementById('juegos');
   const games = Array.from(container.getElementsByClassName('game'));
   const paginationContainer = document.getElementById('pagination');
@@ -34,4 +34,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setupPagination();
 });
-
