@@ -1,84 +1,136 @@
+/* estilos.css */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #337c;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1em 0;
+    background-color: #1a053c;
+    color: #a020f0;
+    text-align: center;
+    padding: 1em 0;
+    animation: fuego 5s infinite;
+}
+
+@keyframes fuego {
+    0% {
+        text-shadow: 0 0 10px #8a2be2, 0 0 20px #9400d3, 0 0 30px #9932cc;
+    }
+    50% {
+        text-shadow: 0 0 20px #9400d3, 0 0 30px #9932cc, 0 0 40px #8a2be2;
+    }
+    100% {
+        text-shadow: 0 0 10px #9932cc, 0 0 20px #8a2be2, 0 0 30px #9400d3;
+    }
 }
 
 main {
-  padding: 20px;
+    padding: 20px;
 }
 
 .juegos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    display: grid; /* Usamos grid para el diseño */
+    grid-template-columns: repeat(8, 1fr); /* 8 columnas */
+    gap: 10px; /* Espacio entre elementos */
+    justify-content: center; /* Centramos el grid */
+}
+
+.tab-button {
+    color: red;
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
 }
 
 .juegos a {
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
 }
 
 .juegos a img {
-  opacity: 0;
-  animation: fadeIn 1s forwards;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    width: 128px; /* Ancho fijo */
+    height: 128px; /* Alto fijo */
+    display: block;
+    margin: 0 auto;
 }
 
 .juegos a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.juegos img {
-  width: 128px;
-  height: 128px;
-  display: block;
-  margin: 0 auto;
+h1, h2, h3, h4, h5 {
+    color: red;
 }
 
 .juegos span {
-  display: block;
-  margin-top: 5px;
-  text-align: center;
-  font-size: 14px;
-  color: #333;
+    display: block;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
 }
 
 footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1em 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  animation: slideInUp 1s forwards;
+    background-color: #1a053c;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    animation: slideInUp 1s forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideInUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* paginacion.css (o incluir en estilos.css) */
+.pagination {
+    display: flex; /* Para que los números de página estén en línea */
+    justify-content: center; /* Centrar la paginación */
+    margin-top: 20px; /* Espacio arriba */
+}
+
+.pagination span.page-number {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    margin: 0 5px; /* Espacio a los lados */
+    cursor: pointer;
+    background-color: #fff; /* Color de fondo */
+    color: #333; /* Color de texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.pagination span.page-number.active {
+    background-color: #eee; /* Color de fondo para la página activa */
+    font-weight: bold; /* Texto en negrita para la página activa */
+}
+
+.pagination span.page-number:hover {
+    background-color: #ddd; /* Cambiar color de fondo al pasar el ratón */
+}
+
+.pagination span { /* Estilos para los ... */
+    padding: 5px 10px;
+    margin: 0 5px;
 }
