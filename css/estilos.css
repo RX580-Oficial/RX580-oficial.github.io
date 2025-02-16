@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #000000;
+  background-color: #337c;
   margin: 0;
   padding: 0;
 }
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 5px;
   text-align: center;
   font-size: 14px;
-  color: #333;
+  color: #000000;
 }
 
 footer {
