@@ -5,12 +5,32 @@ body {
   padding: 0;
 }
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Valor negativo para que quede detrás */
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenedor-principal {
+  position: relative;
+  z-index: 1;
+}
+
 header {
   background-color: #1a053c; /* Fondo morado oscuro */
   color: #a020f0; /* Morado gaming para el texto */
   text-align: center;
   padding: 1em 0;
-  animation: fuego 5s infinite; /* Animaci�n de fuego */
+  animation: fuego 5s infinite; /* Animación de fuego */
 }
 
 @keyframes fuego {
