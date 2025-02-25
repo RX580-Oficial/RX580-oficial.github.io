@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UFT-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RX580 Pagina Web</title>
     <link rel="stylesheet" href="css/estilos.css">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/other.css">
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/redes.css">
+    <link rel="stylesheet" href="css/table.css">
     <link rel="icon" href="Icon.png" type="image/png">
 </head>
 <body>
@@ -26,10 +27,13 @@
 
 <div class="contenedor-principal">
  <main>
-        <div class="tabs">
-            <button class="tab-button" onclick="openTab('games')">Juegos</button>
-            <button class="tab-button" onclick="openTab('videos')"><a href="mis_videos.html" class="videos-link">Videos</a></button>
-        </div>
+  <div class="container">
+    <div class="box" id="games">Juegos</div>
+    <div class="box" id="videos">Videos</div>
+    <div class="box">Tu título</div>
+    <div class="box">Tu título</div>
+    <div class="box" id="iniciar">Registrate o Accede</div>
+  </div>
 
         <div id="games" class="tab-content">
             <div class="search-bar">
@@ -102,5 +106,6 @@
     <script src="js/cockies.js"></script>
     <script src="js/anim.js"></script>
     <script src="js/music.js"></script>
+    <script src="js/table.js"></script>
 </body>
 </html>
