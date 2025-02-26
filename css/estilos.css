@@ -1,4 +1,4 @@
-body {
+﻿body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -126,4 +126,68 @@ footer {
   to {
     transform: translateY(0);
   }
+}
+
+/* ... tu código CSS ... */
+
+.music-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #1a053c;
+    border: 1px solid #a020f0;
+    padding: 10px;
+    color: #a020f0;
+}
+
+.music-toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.music-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    display: none;
+    transition: height 0.5s ease-in-out; /* Transición para la altura */
+    overflow: hidden; /* Asegura que la animación sea suave */
+}
+
+.music-list.show {
+    display: block;
+}
+
+.music-list li {
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.5s ease; /* Transición para el color de fondo */
+}
+
+.music-list li:hover {
+    background-color: #4a148c; /* Color morado más claro al pasar el ratón */
+}
+
+/* Estilos para el texto "Escuchar Música" */
+.music-text {
+    color: #007bff; /* Color azul */
+    font-weight: bold; /* Texto en negrita */
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+}
+
+/* Estilos para el botón "Reproducir Música" */
+.music-button {
+    background-color: #a020f0; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 1em; /* Tamaño de fuente */
+}
+
+/* Estilos para el botón cuando el cursor está encima */
+.music-button:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el cursor */
 }
