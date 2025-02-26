@@ -178,7 +178,7 @@ footer {
 
 /* Estilos para el botón "Reproducir Música" */
 .music-button {
-    background-color: #a020f0; /* Fondo verde */
+    background-color: #a020f0; /* Fondo Morado */
     color: white; /* Texto blanco */
     padding: 10px 20px; /* Espaciado interno */
     border: none; /* Sin borde */
@@ -189,5 +189,5 @@ footer {
 
 /* Estilos para el botón cuando el cursor está encima */
 .music-button:hover {
-    background-color: #218838; /* Verde más oscuro al pasar el cursor */
+    background-color: #9B26B6; /* Morado más oscuro al pasar el cursor */
 }
