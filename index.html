@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UFT-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RX580 Pagina Web</title>
     <link rel="stylesheet" href="css/estilos.css">
@@ -12,7 +13,81 @@
     <link rel="stylesheet" href="css/redes.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="icon" href="Icon.png" type="image/png">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: sans-serif;
+        }
+
+        /* Estilos para la campana de notificaciones */
+        .notification-bell {
+            position: relative;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-image: url('Images/campana.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: transform 0.2s ease;
+            position: absolute;
+            top: 20px;
+            right: 60px;
+        }
+
+        .notification-bell:hover {
+            transform: scale(1.1);
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 4px 6px;
+            font-size: 12px;
+            animation: pulse 1s infinite;
+            display: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Estilos para la imagen de perfil */
+        #profileImage {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        /* Estilos para los juegos */
+        .juego {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .juego img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
 </head>
+
 <body>
     <div id="loading">
         <span>Bienvenido</span>
@@ -22,84 +97,90 @@
         <h1>Sitio oficial de descargas de RX580</h1>
     </header>
     <div class="background">
-  <img src="background.png" alt="Imagen de fondo">
-</div>
+        <img src="background.png" alt="Imagen de fondo">
+    </div>
 
-<div class="contenedor-principal">
- <main>
-  <div class="container">
-    <div class="box" id="games">Juegos</div>
-    <div class="box" id="videos">Videos</div>
-    <div class="box" id="iniciar">Registrate o Accede</div>
-  </div>
+    <img src="Perfil/Icon.png" alt="Foto de perfil" id="profileImage">
+    <div class="notification-bell" id="notificationBell">
+        <span class="notification-count" id="notificationCount">0</span>
+    </div>
 
-        <div id="games" class="tab-content">
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Buscar juegos...">
+    <div class="contenedor-principal">
+        <main>
+            <div class="container">
+                <div class="box" id="games">Juegos</div>
+                <div class="box" id="videos">Videos</div>
+                <div class="box" id="iniciar">Registrate o Accede</div>
             </div>
-            <div id="juegos" class="juegos">
-                <a href="FS2004.html" class="game">
-                    <img src="Images/FS2004.jpg" alt="Flight Simulator 2004">
-                    <span>Flight Simulator 2004</span>
-                </a>
-                <a href="SWAT4.html" class="game">
-                    <img src="Images/SWAT4.jpg" alt="SWAT4">
-                    <span>SWAT4</span>
-                </a>
-                <a href="GM.html" class="game">
-                    <img src="Images/GM.jpg" alt="Geometry Dash">
-                    <span>Geometry Dash</span>
-                </a>
-                <a href="RE4.html" class="game">
-                    <img src="Images/RE4.jpg" alt="Resident Evil 4">
-                    <span>Resident Evil 4</span>
-                </a>
-                <a href="Bodycam.html" class="game">
-                    <img src="Images/Bodycam.jpg" alt="Bodycam">
-                    <span>Bodycam</span>
-                </a>
-                <a href="SLS.html" class="game">
-                    <img src="Images/SLS.jpg" alt="Streamer Life Simulator 2">
-                    <span>Streamer Life Simulator 2</span>
-                </a>
-                <a href="RoN.html" class="game">
-                    <img src="Images/RoN.jpg" alt="Ready or Not">
-                    <span>Ready or Not</span>
-                </a>
-                <a href="Miside.html" class="game">
-                    <img src="Images/Miside.jpg" alt="MiSide">
-                    <span>MiSide</span>
-                </a>
-                <a href="RE4RE.html" class="game">
-                    <img src="Images/RE4RE.jpg" alt="re4">
-                    <span>Resident Evil 4 Remake</span>
-                </a>
-                <a href="ForAger.html" class="game">
-                    <img src="Images/Forager.jpg" alt="Forager">
-                    <span>Forager</span>
-                </a>
-                <a href="Case Animatronics.html" class="game">
-                    <img src="Images/CaseAni.jpg" alt="Case Animatronics">
-                    <span>Case Animatronics</span>
-                </a>
+
+            <div id="games" class="tab-content">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Buscar juegos...">
                 </div>
-            <div id="pagination" class="pagination"></div>
-        </div>
+                <div id="juegos" class="juegos">
+                    <a href="FS2004.html" class="game">
+                        <img src="Images/FS2004.jpg" alt="Flight Simulator 2004">
+                        <span>Flight Simulator 2004</span>
+                    </a>
+                    <a href="SWAT4.html" class="game">
+                        <img src="Images/SWAT4.jpg" alt="SWAT4">
+                        <span>SWAT4</span>
+                    </a>
+                    <a href="GM.html" class="game">
+                        <img src="Images/GM.jpg" alt="Geometry Dash">
+                        <span>Geometry Dash</span>
+                    </a>
+                    <a href="RE4.html" class="game">
+                        <img src="Images/RE4.jpg" alt="Resident Evil 4">
+                        <span>Resident Evil 4</span>
+                    </a>
+                    <a href="Bodycam.html" class="game">
+                        <img src="Images/Bodycam.jpg" alt="Bodycam">
+                        <span>Bodycam</span>
+                    </a>
+                    <a href="SLS.html" class="game">
+                        <img src="Images/SLS.jpg" alt="Streamer Life Simulator 2">
+                        <span>Streamer Life Simulator 2</span>
+                    </a>
+                    <a href="RoN.html" class="game">
+                        <img src="Images/RoN.jpg" alt="Ready or Not">
+                        <span>Ready or Not</span>
+                    </a>
+                    <a href="Miside.html" class="game">
+                        <img src="Images/Miside.jpg" alt="MiSide">
+                        <span>MiSide</span>
+                    </a>
+                    <a href="RE4RE.html" class="game">
+                        <img src="Images/RE4RE.jpg" alt="re4">
+                        <span>Resident Evil 4 Remake</span>
+                    </a>
+                    <a href="ForAger.html" class="game">
+                        <img src="Images/Forager.jpg" alt="Forager">
+                        <span>Forager</span>
+                    </a>
+                    <a href="Case Animatronics.html" class="game">
+                        <img src="Images/CaseAni.jpg" alt="Case Animatronics">
+                        <span>Case Animatronics</span>
+                    </a>
+                </div>
+                <div id="pagination" class="pagination"></div>
+            </div>
 
-        <div class="social-links">
-            <a href="https://www.facebook.com/groups/955726202554297" target="_blank"><img src="Images/facebook-icon.png" alt="Facebook"></a>
-            <a href="https://www.twitch.tv/rx580_tuning" target="_blank"><img src="Images/twitch-icon.png" alt="Twitch"></a>
-            <a href="https://www.tiktok.com/@ghostsilva28" target="_blank"><img src="Images/tiktok-icon.png" alt="TikTok"></a>
-            <a href="https://www.youtube.com/@RX580Gaming" target="_blank"><img src="Images/youtube-icon.png" alt="YouTube"></a>
-        </div>
-     </div>
-    </main>
-
-    <footer>
-        <p>© 2024-2025 Tu Sitio de Juegos</p>
-    </footer>
-
-    <button id="muteButton">Mutear Música</button>
+            <div class="social-links">
+                <a href="https://www.facebook.com/groups/955726202554297" target="_blank"><img src="Images/facebook-icon.png"
+                        alt="Facebook"></a>
+                <a href="https://www.twitch.tv/rx580_tuning" target="_blank"><img src="Images/twitch-icon.png"
+                        alt="Twitch"></a>
+                <a href="https://www.tiktok.com/@ghostsilva28" target="_blank"><img src="Images/tiktok-icon.png"
+                        alt="TikTok"></a>
+                <a href="https://www.youtube.com/@RX580Gaming" target="_blank"><img src="Images/youtube-icon.png"
+                        alt="YouTube"></a>
+            </div>
+        </main>
+            <br>
+            <center><n><p>© 2024-2025 Tu Sitio de Juegos</p></n><center>
+            </br>
+    </div>
 
     <script src="js/script.js"></script>
     <script src="js/paginacion-copia.js"></script>
@@ -109,5 +190,29 @@
     <script src="js/anim.js"></script>
     <script src="js/music.js"></script>
     <script src="js/table.js"></script>
+    <script src="otherscript.js"></script>
+        <script>
+            // Script para la campanita (MODIFICADO)
+            const notificationBell = document.getElementById('notificationBell');
+            const notificationCount = document.getElementById('notificationCount');
+
+            function updateNotificationCount(count) {
+                notificationCount.textContent = count;
+                if (count > 0) {
+                    notificationCount.style.display = 'block';
+                } else {
+                    notificationCount.style.display = 'none';
+                }
+            }
+
+            let numberOfNotifications = 0; // Reemplaza con tu lógica
+
+            updateNotificationCount(numberOfNotifications);
+
+            notificationBell.addEventListener('click', () => {
+                alert('¡Tienes ' + numberOfNotifications + ' notificaciones!');
+            });
+        </script>
 </body>
+
 </html>
