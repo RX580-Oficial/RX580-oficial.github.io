@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: sans-serif;
-            background-color: #f4f4f4;
+            background-color: #1a053c;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,7 +31,7 @@
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #a020f0;
             color: white;
             padding: 10px 15px;
             border: none;
@@ -47,8 +47,8 @@
 </head>
 <body>
     <div class="container">
-        <input type="text" id="newNotification" placeholder="Nueva notificación">
-        <button id="addNotification">Agregar Notificación</button>
+        <input type="text" id="newNotification" placeholder="Nueva notificaciÃ³n">
+        <button id="addNotification">Agregar NotificaciÃ³n</button>
     </div>
 
     <script>
@@ -61,7 +61,7 @@
                 let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
                 notifications.push(newNotification);
                 localStorage.setItem('notifications', JSON.stringify(notifications));
-                alert('Notificación agregada');
+                alert('NotificaciÃ³n agregada');
                 newNotificationInput.value = '';
             }
         });
