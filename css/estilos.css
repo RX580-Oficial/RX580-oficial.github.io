@@ -1,4 +1,4 @@
-﻿﻿body {
+﻿body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
@@ -190,4 +190,57 @@ footer {
 /* Estilos para el botón cuando el cursor está encima */
 .music-button:hover {
     background-color: #9B26B6; /* Morado más oscuro al pasar el cursor */
+}
+
+.notification-list {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.notification-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.notification-list li:last-child {
+    border-bottom: none;
+}
+
+.notification-list .delete-notification {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.notification-list .delete-notification:hover {
+    background: #c0392b;
+}
+
+/* Estilo para el mensaje "No tienes notificaciones" */
+.notification-list li:first-child {
+    text-align: center;
+    color: #888;
 }

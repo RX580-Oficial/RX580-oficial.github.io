@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Centro de Notificaciones</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="newNotification" placeholder="Nueva notificación">
+        <button id="addNotification">Agregar Notificación</button>
+    </div>
+
+    <script>
+        const newNotificationInput = document.getElementById('newNotification');
+        const addNotificationButton = document.getElementById('addNotification');
+
+        addNotificationButton.addEventListener('click', () => {
+            const newNotification = newNotificationInput.value.trim();
+            if (newNotification) {
+                let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
+                notifications.push(newNotification);
+                localStorage.setItem('notifications', JSON.stringify(notifications));
+                alert('Notificación agregada');
+                newNotificationInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
