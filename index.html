@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/anim.css">
     <link rel="stylesheet" href="css/redes.css">
     <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/galleta.css">
     <link rel="icon" href="Icon.png" type="image/png">
     <style>
         /* Estilos generales */
@@ -95,6 +96,33 @@
         <span>Bienvenido</span>
     </div>
 
+    <div id="galleta" class="galleta">
+        <p>Nuestro sitio y sus respectivos socios <a href="#" id="ver-mas">Ver más</a> son dueños de sus respectivos sitios y solo subimos algunos de sus enlaces.</p>
+        <label><input type="checkbox" id="privacidad"> Acepto la declaración de privacidad</label>
+        <div class="botones-cookies">
+            <button id="aceptar">Aceptar Cookies</button>
+            <button id="rechazar">Rechazar Cookies</button>
+        </div>
+        <a href="#" id="ver-privacidad">Ver Privacidad</a>
+    </div>
+
+    <div id="privacidad-modal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Declaración de Privacidad</h2>
+            <p>En este sitio web, nos comprometemos a proteger tu privacidad. Recopilamos información personal solo cuando es necesario para brindarte nuestros servicios. Utilizamos cookies para mejorar tu experiencia de navegación y personalizar el contenido. No compartimos tu información con terceros sin tu consentimiento, excepto cuando lo exige la ley. Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición contactándonos a través de Nuestro Gmail GhostSilva544@gmail.com Si deseas saber como recopilamos tus datos.</p>
+        </div>
+    </div>
+    <div id="socios-modal" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar-socios">&times;</span>
+        <h2>Sitios Asociados</h2>
+        <a href="http://www.gamezfull.com" target="_blank">Gamezfull</a>
+        <a href="http://www.pivigames.blog" target="_blank">PiviGames</a>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
     <header>
         <h1>Sitio oficial de descargas de RX580</h1>
     </header>
@@ -256,7 +284,8 @@
     <script src="js/music.js"></script>
     <script src="js/table.js"></script>
     <script src="otherscript.js"></script>
-    <script src="paginacion-copia.js"></script>
+    <script src="paginacion.js"></script>
+    <script src="js/galleta.js"></script>
         <script>
         const notificationBell = document.getElementById('notificationBell');
         const notificationCount = document.getElementById('notificationCount');
