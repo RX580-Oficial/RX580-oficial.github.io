@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contenidoPrincipal.style.display = 'block';
             }
         } else {
-            alert('Debes aceptar la declaraciÃ³n de privacidad.');
+            alert('Debes aceptar la declaración de privacidad.');
         }
     });
 
