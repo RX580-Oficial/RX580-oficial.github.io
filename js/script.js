@@ -4,7 +4,7 @@
 let flameContainer = document.createElement('div');
 flameContainer.innerHTML = `
   <div style="position:relative;">
-    <img src="ruta_a_tu_imagen_de_llama.png" alt="Llama" style="width:100px; height:100px; position:absolute; top:-50px;">
+    <img src="llama.png" alt="Llama" style="width:100px; height:100px; position:absolute; top:-50px;">
     <span style="font-size:20px; color:red; font-weight:bold; position:absolute; top:60px; left:0;">Popular</span>
   </div>
 `;
