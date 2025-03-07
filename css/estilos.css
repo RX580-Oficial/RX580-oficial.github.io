@@ -244,3 +244,7 @@ footer {
     text-align: center;
     color: #888;
 }
+
+.game {
+  text-decoration: none;
+}
