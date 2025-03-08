@@ -246,5 +246,27 @@ footer {
 }
 
 .game {
+  position: relative;
   text-decoration: none;
+  display: inline-block;
+}
+
+.game .animated-line {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #1a053c, #a020f0);
+  transition: width 0.3s ease;
+}
+
+.game:hover .animated-line {
+  width: 100%;
+}
+
+#animated-text {
+  font-size: 2em; /* Ajusta el tamaño según sea necesario */
+  font-weight: bold;
+  white-space: nowrap; /* Evita saltos de línea */
 }
