@@ -16,79 +16,6 @@
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/galleta.css">
     <link rel="icon" href="Icon.png" type="image/png">
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: sans-serif;
-        }
-
-        /* Estilos para la campana de notificaciones */
-        .notification-bell {
-            position: relative;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            background-image: url('Images/campana.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            transition: transform 0.2s ease;
-            position: absolute;
-            top: 20px;
-            right: 60px;
-        }
-
-        .notification-bell:hover {
-            transform: scale(1.1);
-        }
-
-        .notification-count {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            padding: 4px 6px;
-            font-size: 12px;
-            animation: pulse 1s infinite;
-            display: none;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Estilos para la imagen de perfil */
-        #profileImage {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        /* Estilos para los juegos */
-        .juego {
-            display: inline-block;
-            margin: 10px;
-        }
-
-        .juego img {
-            width: 50px;
-            height: 50px;
-        }
-    </style>
 </head>
 
 <body>
@@ -299,50 +226,7 @@
     <script src="js/galleta.js"></script>
     <script src="js/lettersanim.js"></script>
     <script src="js/otherletter.js"></script>
-    <script>
-        const notificationBell = document.getElementById('notificationBell');
-        const notificationCount = document.getElementById('notificationCount');
-        const notificationList = document.getElementById('notificationList');
-        const notificationListUl = notificationList.querySelector('ul');
-
-        function updateNotificationCount(count) {
-            notificationCount.textContent = count;
-            notificationCount.style.display = count > 0 ? 'block' : 'none';
-        }
-
-        function displayNotifications() {
-            notificationListUl.innerHTML = '';
-            notifications.forEach((notification, index) => {
-                const li = document.createElement('li');
-                li.textContent = notification;
-                const deleteButton = document.createElement('button');
-                deleteButton.textContent = 'x';
-                deleteButton.classList.add('delete-notification');
-                deleteButton.addEventListener('click', () => deleteNotification(index));
-                li.appendChild(deleteButton);
-                notificationListUl.appendChild(li);
-            });
-        }
-
-        function deleteNotification(index) {
-            notifications.splice(index, 1);
-            localStorage.setItem('notifications', JSON.stringify(notifications));
-            updateNotificationCount(notifications.length);
-            displayNotifications();
-        }
-
-        let notifications = JSON.parse(localStorage.getItem('notifications')) || [];
-        updateNotificationCount(notifications.length);
-
-        notificationBell.addEventListener('click', () => {
-            if (notificationList.style.display === 'block') {
-                notificationList.style.display = 'none';
-            } else {
-                notificationList.style.display = 'block';
-                displayNotifications();
-            }
-        });
-    </script>
+    <script src="js/bellnoti.js"></script>
     <script type="text/javascript">
 	atOptions = {
 		'key' : '462adefdc2339a198c94db966337825a',
