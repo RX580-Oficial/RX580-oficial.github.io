@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft 1.21.4 Descargas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="Icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <h1>Minecraft 1.21.4</h1>
+    </header>
+    <main>
+        <div class="descripcion">
+            <img src="https://i.postimg.cc/qBQQTtgH/image.png" alt="Fondo del Juego Minecraft 1.21.4" style="width: 100%; height: auto; display: block;">
+            <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">Minecraft 1.21.4</span></h6>
+            <p>Minecraft 1.21.4, la última actualización de Java Edition, trae consigo nuevas y emocionantes características para los jugadores. Sumérgete en un mundo de bloques donde la creatividad no tiene límites. Explora nuevos biomas, descubre mobs únicos y construye estructuras impresionantes. Esta versión incluye mejoras de rendimiento, correcciones de errores y contenido fresco para enriquecer tu experiencia de juego. ¡Prepárate para vivir aventuras inolvidables en el mundo de Minecraft!</p>
+            <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">REQUISITOS DEL SISTEMA</span></h6>
+            <h3>Mínimos:</h3>
+            <p>Sistema Operativo: Windows 7/8/10/11 de 64 bits, macOS X 10.9.0 o superior, Linux (distribuciones modernas)<br>
+                Procesador: Intel Core i3-3210 o AMD A8-7600<br>
+                Memoria: 4 GB de RAM<br>
+                Tarjeta gráfica: Intel HD Graphics 4000 o AMD Radeon R5 series con OpenGL 4.4<br>
+                Almacenamiento: 2 GB de espacio disponible</p>
+            <h3>Recomendados:</h3>
+            <p>Sistema Operativo: Windows 10/11 de 64 bits, macOS X 10.12 Sierra o superior, Linux (distribuciones modernas)<br>
+                Procesador: Intel Core i5-4690 o AMD A10-7800<br>
+                Memoria: 8 GB de RAM<br>
+                Tarjeta gráfica: NVIDIA GeForce 700 series o AMD Radeon Rx 200 series con OpenGL 4.5<br>
+                Almacenamiento: 4 GB de espacio disponible</p>
+            <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">INSTRUCCIONES</span></h6>
+            <br>Descargar el instalador de Minecraft 1.21.4</br>
+            <br>Ejecutar el instalador</br>
+            <br>Iniciar el Launcher de Minecraft</br>
+            <br>Seleccionar la versión 1.21.4</br>
+            <br>Jugar </br>
+            <center>
+                <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">FICHA TÉCNICA</span></h6>
+            </center>
+            <br>PLATAFORMA: PC (Java Edition)</br>
+            <br>GÉNERO: Sandbox, Supervivencia, Aventura</br>
+            <br>DESARROLLADOR: Mojang Studios</br>
+            <br>EDITOR: Mojang Studios</br>
+            <br>FECHA DE LANZAMIENTO: Versión 1.21.4</br>
+            <br>FECHA DE ACTUALIZACIÓN: Última versión disponible en el Launcher de Minecraft</br>
+            <div class="gallery-capturas">
+                <script>
+                    const imagesCapturas = [
+                        'https://preview.redd.it/1n8h7b0r4iv41.jpg?auto=webp&s=3ad28b5db08250d294997299c1ce1f4b0ca64c7a',
+                        'https://static.wikia.nocookie.net/minecraft_es_gamepedia/images/3/3f/Beta.png/revision/latest?cb=20110711205506',
+                        'https://www.minecraft.net/content/dam/minecraftnet/archive/4da5ff0255092969c073274e0430e52d-6.png'
+                    ];
+                    const imageWidthPercentage = 33;
+                    const body = document.body;
+
+                    imagesCapturas.forEach(image => {
+                        const img = document.createElement('img');
+                        img.src = image;
+                        img.style.width = `${imageWidthPercentage}%`;
+                        img.style.height = 'auto';
+                        img.style.margin = '5px';
+                        img.style.transition = 'opacity 0.3s ease-in-out';
+                        img.style.borderRadius = '10px';
+                        img.style.cursor = 'pointer';
+
+                        img.addEventListener('click', () => {
+                            body.style.transition = 'background-color 0.5s ease-in-out';
+                            body.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+
+                            const modal = document.createElement('div');
+                            modal.style.position = 'fixed';
+                            modal.style.top = '0';
+                            modal.style.left = '0';
+                            modal.style.width = '100%';
+                            modal.style.height = '100%';
+                            modal.style.display = 'flex';
+                            modal.style.justifyContent = 'center';
+                            modal.style.alignItems = 'center';
+                            modal.style.zIndex = '1000';
+                            modal.style.opacity = '0';
+                            modal.style.transition = 'opacity 0.3s ease-in-out';
+
+                            const largeImg = img.cloneNode();
+                            largeImg.style.width = '1024px';
+                            largeImg.style.height = '768px';
+                            largeImg.style.transition = 'transform 0.3s ease-in-out';
+                            largeImg.style.transform = 'scale(0.8)';
+                            modal.appendChild(largeImg);
+
+                            const closeBtn = document.createElement('span');
+                            closeBtn.innerHTML = '×';
+                            closeBtn.style.position = 'absolute';
+                            closeBtn.style.top = '10px';
+                            closeBtn.style.right = '10px';
+                            closeBtn.style.fontSize = '24px';
+                            closeBtn.style.color = 'white';
+                            closeBtn.style.cursor = 'pointer';
+                            modal.appendChild(closeBtn);
+
+                            body.appendChild(modal);
+
+                            setTimeout(() => {
+                                modal.style.opacity = '1';
+                                largeImg.style.transform = 'scale(1)';
+                            }, 10);
+
+                            closeBtn.addEventListener('click', () => {
+                                body.style.transition = 'background-color 0.5s ease-in-out';
+                                body.style.backgroundColor = '';
+
+                                modal.style.opacity = '0';
+                                largeImg.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    body.removeChild(modal);
+                                }, 300);
+                            });
+                        });
+
+                        document.querySelector('.gallery-capturas').appendChild(img);
+                    });
+                </script>
+                <style>
+                    .gallery-capturas {
+                        display: flex;
+                        justify-content: center;
+                    }
+                </style>
+                <div id="modal" class="modal">
+                    <span class="close">×</span>
+                    <img class="modal-content" id="modal-img">
+                </div>
+            </div>
+            <style>
+                .gallery-capturas {
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+            <div class="media">
+                <a href="examples/Redirect21">
+                    <img src="download_button.png" alt="Botón de descarga" style="display: block; margin: 0 auto; width: 200px; height: 50px;">
+                </a>
+            </div>
+            <div class="media" style="text-align: center;">
+                <h6 style="font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">Trailer</span></h6>
+<div style="width: 560px; margin: 0 auto; border: 3px solid #a020f0;">
+  <iframe width="560" height="320" src="https://www.youtube.com/embed/MmB9b5njVbA" frameborder="0" allowfullscreen></iframe>
+</div>
+                <a href="http://ouo.io/ref/YmaLEo5l"><img src="http://ouo.io/images/banners/r1.jpg" title="ouo.io - Crea enlaces cortos y gana el mayor dinero posible" /></a>
+            </div>
+        </div>
+    </main>
+    <br><br><br><br>
+    <footer>
+        <p>© RX580 Sitio Oficial</p>
+    </footer>
+</body>
+</html>
