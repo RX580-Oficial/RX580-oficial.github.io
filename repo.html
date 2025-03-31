@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.E.P.O. Descargas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="icon" href="Icon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <h1>R.E.P.O.</h1>
+    </header>
+    <main>
+        <div class="descripcion">
+            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/3241660/header.jpg?t=1708453488" alt="Fondo del Juego REPO" style="width: 100%; height: auto; display: block;">
+            <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">R.E.P.O.</span></h6>
+            <p>Un juego de terror cooperativo en línea con hasta 6 jugadores. Localiza objetos valiosos, basados ​​completamente en la física, y manéjalos con cuidado mientras los recuperas y extraes para satisfacer los deseos de tu creador.</p>
+            <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">REQUISITOS DEL SISTEMA</span></h6>
+            <h3>Mínimos:</h3>
+            <p>Sistema Operativo: Windows 10<br>
+                Procesador: Intel Core i5 6600<br>
+                Memoria: 8 GB de RAM<br>
+                Tarjeta gráfica: NVIDIA GeForce GTX 970<br>
+                Almacenamiento: 1 GB de espacio disponible</p>
+            <h3>Recomendados:</h3>
+            <p>Sistema Operativo: Windows 11<br>
+                Procesador: Intel Core i7 8700<br>
+                Memoria: 8 GB de RAM<br>
+                Tarjeta gráfica: NVIDIA GeForce GTX 1070<br>
+                Almacenamiento: 1 GB de espacio disponible</p>
+            <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">INSTRUCCIONES</span></h6>
+            <br>Descargar el juego</br>
+            <br>Descomprimir carpeta RAR (si aplica)</br>
+            <br>Ejecutar el instalador (si aplica)</br>
+            <br>Ejecutar el juego</br>
+            <br>Jugar 😉</br>
+            <center>
+                <h6 style="text-align: center; font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">FICHA TÉCNICA</span></h6>
+            </center>
+            <br>PLATAFORMA: PC</br>
+            <br>GÉNERO: Plataformas, Puzles, Aventura, Primera Persona</br>
+            <br>DESARROLLADOR: REPO Team</br>
+            <br>EDITOR: REPO Team</br>
+            <br>FECHA DE LANZAMIENTO: 2024</br>
+            <div class="gallery-capturas">
+                <script>
+                    const imagesCapturas = [
+                        'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_cd332c2299810a65c6aee61c04750197a919692a.600x338.jpg?t=1740578354',
+                        'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_af7d8d6302d543d89019bad49ea853a970bb82de.600x338.jpg?t=1740578354',
+                        'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3241660/ss_a66715d57329c456d91aeb11fbd406e7d8c5dbc7.600x338.jpg?t=1740578354'
+                    ];
+                    const imageWidthPercentage = 33;
+                    const body = document.body;
+
+                    imagesCapturas.forEach(image => {
+                        const img = document.createElement('img');
+                        img.src = image;
+                        img.style.width = `${imageWidthPercentage}%`;
+                        img.style.height = 'auto';
+                        img.style.margin = '5px';
+                        img.style.transition = 'opacity 0.3s ease-in-out';
+                        img.style.borderRadius = '10px';
+                        img.style.cursor = 'pointer';
+
+                        img.addEventListener('click', () => {
+                            body.style.transition = 'background-color 0.5s ease-in-out';
+                            body.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+
+                            const modal = document.createElement('div');
+                            modal.style.position = 'fixed';
+                            modal.style.top = '0';
+                            modal.style.left = '0';
+                            modal.style.width = '100%';
+                            modal.style.height = '100%';
+                            modal.style.display = 'flex';
+                            modal.style.justifyContent = 'center';
+                            modal.style.alignItems = 'center';
+                            modal.style.zIndex = '1000';
+                            modal.style.opacity = '0';
+                            modal.style.transition = 'opacity 0.3s ease-in-out';
+
+                            const largeImg = img.cloneNode();
+                            largeImg.style.width = '1024px';
+                            largeImg.style.height = '768px';
+                            largeImg.style.transition = 'transform 0.3s ease-in-out';
+                            largeImg.style.transform = 'scale(0.8)';
+                            modal.appendChild(largeImg);
+
+                            const closeBtn = document.createElement('span');
+                            closeBtn.innerHTML = '×';
+                            closeBtn.style.position = 'absolute';
+                            closeBtn.style.top = '10px';
+                            closeBtn.style.right = '10px';
+                            closeBtn.style.fontSize = '24px';
+                            closeBtn.style.color = 'white';
+                            closeBtn.style.cursor = 'pointer';
+                            modal.appendChild(closeBtn);
+
+                            body.appendChild(modal);
+
+                            setTimeout(() => {
+                                modal.style.opacity = '1';
+                                largeImg.style.transform = 'scale(1)';
+                            }, 10);
+
+                            closeBtn.addEventListener('click', () => {
+                                body.style.transition = 'background-color 0.5s ease-in-out';
+                                body.style.backgroundColor = '';
+
+                                modal.style.opacity = '0';
+                                largeImg.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    body.removeChild(modal);
+                                }, 300);
+                            });
+                        });
+
+                        document.querySelector('.gallery-capturas').appendChild(img);
+                    });
+                </script>
+                <style>
+                    .gallery-capturas {
+                        display: flex;
+                        justify-content: center;
+                    }
+                </style>
+                <div id="modal" class="modal">
+                    <span class="close">×</span>
+                    <img class="modal-content" id="modal-img">
+                </div>
+            </div>
+            <style>
+                .gallery-capturas {
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+            <div class="media">
+                <a href="https://ouo.io/sGPLvhJ">
+                    <img src="download_button.png" alt="Botón de descarga" style="display: block; margin: 0 auto; width: 200px; height: 50px;">
+                </a>
+            </div>
+            <div class="media" style="text-align: center;">
+                <h6 style="font-size: 150%;"><span style="text-decoration: underline; color: #a020f0;">Trailer</span></h6>
+                <div style="width: 560px; margin: 0 auto; border: 3px solid #a020f0;">
+                    <iframe width="560" height="320" src="https://video.fastly.steamstatic.com/store_trailers/257093766/movie480_vp9.webm?t=1738855008" title="Steam video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <a href="http://ouo.io/ref/YmaLEo5l"><img src="http://ouo.io/images/banners/r1.jpg" title="ouo.io - Crea enlaces cortos y gana el mayor dinero posible" /></a>
+            </div>
+        </div>
+    </main>
+    <br><br><br><br>
+    <footer>
+        <p>© RX580 Sitio Oficial</p>
+    </footer>
+</body>
+</html>
