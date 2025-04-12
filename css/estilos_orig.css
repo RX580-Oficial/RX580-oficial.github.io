@@ -1,0 +1,30 @@
+﻿/* Estilos por defecto para pantallas más grandes */
+.juegos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.juegos a {
+    width: calc(12.5% - 10px); /* 8 por fila */
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease-in;
+    box-sizing: border-box;
+}
+
+/* Para pantallas más pequeñas (ejemplo: anchos menores a 1024px) */
+@media (max-width: 1023px) {
+    .juegos a {
+        width: calc(16.666% - 10px); /* 6 por fila */
+    }
+}
+
+/* Para pantallas aún más pequeñas (ejemplo: anchos menores a 768px) */
+@media (max-width: 767px) {
+    .juegos a {
+        width: calc(25% - 10px); /* 4 por fila */
+    }
+}

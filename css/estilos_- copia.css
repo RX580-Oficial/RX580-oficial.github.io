@@ -381,44 +381,26 @@ footer {
             height: 50px;
         }
 
-.pagination {
-    margin-top: 20px;
-    text-align: center;
-    color: #eee;
+.profile-container {
+  position: relative; /* Establece el contenedor como punto de referencia */
+  display: inline-block; /* Para que se ajuste al tamaño del contenido */
 }
 
-.pagination span {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 0 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #333;
-    color: #eee;
+.subscribe-button-overlay {
+  position: absolute; /* Permite superponer el botón sobre la imagen */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el botón */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.3s ease-in-out; /* Transición suave para la aparición */
+  font-size: 14px; /* Ajusta el tamaño de la fuente */
 }
 
-.pagination span.current {
-    background-color: #a020f0;
-    color: #fff;
-    border-color: #a020f0;
-}
-
-.pagination span:hover {
-    background-color: #555;
-}
-
-/* Estilo para el botón "Reproducir Música" */
-.music-button {
-    background-color: #a020f0;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.music-button:hover {
-    background-color: #9B26B6;
+.profile-container:hover .subscribe-button-overlay {
+  opacity: 1; /* Se vuelve visible al pasar el cursor */
 }
