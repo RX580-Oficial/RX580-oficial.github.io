@@ -394,7 +394,7 @@ footer {
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #333;
+    background-color: #a020f0;
     color: #eee;
 }
 
@@ -405,7 +405,7 @@ footer {
 }
 
 .pagination span:hover {
-    background-color: #555;
+    background-color: #1a053c;
 }
 
 /* Estilo para el botón "Reproducir Música" */
@@ -421,4 +421,17 @@ footer {
 
 .music-button:hover {
     background-color: #9B26B6;
+}
+
+.fechasis {
+  display: block; /* Cambiamos a block para que ocupe el ancho necesario */
+  color: #a020f0;
+  background-color: #1a053c;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  width: fit-content; /* El ancho se ajusta al contenido */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Centra el texto dentro del cuadro */
 }
