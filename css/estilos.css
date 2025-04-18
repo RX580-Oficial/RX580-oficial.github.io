@@ -435,3 +435,8 @@ footer {
   margin-right: auto;
   text-align: center; /* Centra el texto dentro del cuadro */
 }
+
+#imagen-debajo-footer {
+    position: absolute;
+    */* opacity: 0.8; */*
+}
