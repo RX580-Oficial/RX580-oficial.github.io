@@ -440,3 +440,72 @@ footer {
     position: absolute;
     */* opacity: 0.8; */*
 }
+
+.modo-interruptor {
+  position: relative; /* Para posicionar los elementos internos */
+  display: inline-block; /* O block si quieres que ocupe toda la línea */
+  overflow: hidden; /* Para ocultar el desbordamiento de los iconos */
+  width: 100px; /* Ancho del botón */
+  height: 30px; /* Alto del botón */
+  border: 1px solid #ccc; /* Borde del botón */
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+#boton-modo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #eee; /* Color de fondo del "deslizador" */
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* Transición suave para el deslizamiento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+#boton-modo.dark {
+  transform: translateX(calc(100% - 30px)); /* Desplaza el botón hacia la derecha */
+  background-color: #333; /* Color de fondo en modo oscuro */
+  color: #fff;
+}
+
+.icono-izquierda, .icono-derecha {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.icono-izquierda {
+  left: 0;
+}
+
+.icono-derecha {
+  right: 0;
+  opacity: 0; /* Inicialmente oculto */
+}
+
+#boton-modo.dark .icono-izquierda {
+  opacity: 0;
+}
+
+#boton-modo.dark .icono-derecha {
+  opacity: 1;
+}
+
+body.dark-mode {
+  background-color: #222;
+  color: #eee;
+  /* Aquí puedes añadir más estilos para el modo oscuro de otros elementos de tu página */
+}
