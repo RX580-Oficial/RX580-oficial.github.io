@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos (ajusta los datos)
-$servername = "localhost";
-$username = "tu_usuario";
-$password = "tu_contraseña";
-$dbname = "tu_base_de_datos";
+$servername = "https://rx580-oficial.github.io/";
+$username = "Leon";
+$password = "Franyel2011$";
+$dbname = "RX580";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $confirm_password = $_POST["confirm_password"];
     $terms = isset($_POST["terms"]) ? 1 : 0;
     $newsletter = isset($_POST["newsletter"]) ? 1 : 0;
-    $profile_image = "uploads/default.jpg"; // Ruta a la imagen predeterminada (AJUSTA LA RUTA)
+    $profile_image = "Perfil/default.jpg"; // Ruta a la imagen predeterminada (AJUSTA LA RUTA)
 
     // Validación (manten las validaciones que ya tenías)
     if (empty($username)) {
