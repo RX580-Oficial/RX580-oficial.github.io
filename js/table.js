@@ -11,6 +11,9 @@ boxes.forEach(box => {
     } else if (box.id === 'iniciar') {
       // Abre la página de videos
       window.open('Inicio.html', '_blank');
+    } else if (box.id === 'donar') {
+      // Pagina de pagos
+     window.open('https://www.paypal.me/proplayerpay', '_blank');
     }
   });
 });
