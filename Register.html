@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <meta charset="UFT-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="css/Formulario.css">
@@ -54,8 +54,7 @@
 <body>
     <div class="formula">
         <h2>Registro</h2>
-        <form action="index.html" method="post" enctype="multipart/form-data">
-            <div class="username">
+        <form id="registerForm"> <div class="username">
                 <input type="text" id="username" name="username" required>
                 <label for="username">Nombre de Usuario</label>
             </div>
@@ -88,15 +87,97 @@
             <div class="registrarse">¿Ya tienes una cuenta? <a href="inicio.html">Iniciar Sesión</a></div>
         </form>
     </div>
-    <script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+        // Import getAuth, createUserWithEmailAndPassword, and updateProfile for authentication
+        import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js"; 
+        // Import getStorage, ref, uploadBytes, and getDownloadURL for storage
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxDhX1l674FFhHLb5cdGlP7hYjBrVWc74",
+            authDomain: "proplayer-e775e.firebaseapp.com",
+            projectId: "proplayer-e775e",
+            storageBucket: "proplayer-e775e.firebasestorage.app",
+            messagingSenderId: "900441654672",
+            appId: "1:900441654672:web:929e94a8af83fb59e69f15",
+            measurementId: "G-6BE72NDQLL"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app); // Get the Auth service
+        const storage = getStorage(app); // Get the Storage service
+
+        const registerForm = document.getElementById('registerForm');
         const fileInput = document.getElementById('profile_image');
         const fileNameSpan = document.querySelector('.file-name');
 
+        // Update file name display
         fileInput.addEventListener('change', function () {
             if (this.files && this.files[0]) {
                 fileNameSpan.textContent = this.files[0].name;
             } else {
                 fileNameSpan.textContent = 'Ningún archivo seleccionado';
+            }
+        });
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const profileImageFile = fileInput.files[0]; // Get the selected file
+
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden.');
+                return;
+            }
+
+            if (!document.getElementById('terms').checked) {
+                alert('Debes aceptar los términos y condiciones.');
+                return;
+            }
+
+            try {
+                // 1. Create user with email and password
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                console.log('Usuario registrado:', user);
+
+                // 2. Update user profile with username (display name)
+                await updateProfile(user, {
+                    displayName: username
+                });
+                console.log('Nombre de usuario actualizado:', username);
+
+                // 3. Upload profile image to Firebase Storage (if selected)
+                if (profileImageFile) {
+                    const storageRef = ref(storage, `profile_images/${user.uid}/${profileImageFile.name}`);
+                    const uploadTask = await uploadBytes(storageRef, profileImageFile);
+                    const imageUrl = await getDownloadURL(uploadTask.ref);
+                    console.log('Imagen de perfil subida:', imageUrl);
+
+                    // You might want to update the user's profile with the photoURL here
+                    await updateProfile(user, {
+                        photoURL: imageUrl
+                    });
+                    console.log('URL de la foto de perfil actualizada.');
+                }
+
+                alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
+                window.location.href = 'inicio.html'; // Redirect to login page after successful registration
+
+            } catch (error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error('Error al registrar usuario:', errorCode, errorMessage);
+                alert(`Error al registrar usuario: ${errorMessage}`);
             }
         });
     </script>

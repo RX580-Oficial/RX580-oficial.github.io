@@ -342,5 +342,93 @@
     <script src="js/otherletter.js"></script>
     <script src="js/bellnoti.js"></script>
     <script src="js/busqueda.js"></script>
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxDhX1l674FFhHLb5cdGlP7hYjBrVWc74",
+            authDomain: "proplayer-e775e.firebaseapp.com",
+            projectId: "proplayer-e775e",
+            storageBucket: "proplayer-e775e.firebasestorage.app",
+            messagingSenderId: "900441654672",
+            appId: "1:900441654672:web:929e94a8af83fb59e69f15",
+            measurementId: "G-6BE72NDQLL"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Get references to the elements we'll update
+        const iniciarBox = document.getElementById('iniciar');
+        const profileImage = document.getElementById('profileImage');
+        const profileImageLink = profileImage.closest('a'); // Get the parent <a> tag
+
+        // Listen for authentication state changes
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in
+                console.log('Usuario autenticado:', user);
+                // Update "Registrate o Accede" box
+                iniciarBox.innerHTML = `Bienvenido, ${user.displayName || user.email.split('@')[0]} <br> <button id="logoutButton" style="background: none; border: none; color: white; cursor: pointer; text-decoration: underline; font-size: inherit; padding: 0;">Cerrar Sesión</button>`;
+                iniciarBox.style.cursor = 'default'; // Make it not look clickable for login/register
+                iniciarBox.onclick = null; // Remove any existing click handler
+
+                // Update profile image
+                if (user.photoURL) {
+                    profileImage.src = user.photoURL;
+                } else {
+                    profileImage.src = 'Perfil/Icon.png'; // Default icon if no photoURL
+                }
+                
+                // Make profile image clickable to go to a profile page (you'd need to create this)
+                profileImageLink.href = '#'; // Or a dedicated profile page, e.g., 'profile.html'
+                profileImageLink.onclick = (e) => {
+                    e.preventDefault(); // Prevent default link behavior if not navigating to a new page
+                    // Maybe open a modal with user info, or navigate to profile.html
+                    alert(`¡Hola, ${user.displayName || user.email}!`);
+                };
+
+
+                // Add logout functionality
+                const logoutButton = document.getElementById('logoutButton');
+                if (logoutButton) {
+                    logoutButton.addEventListener('click', async () => {
+                        try {
+                            await signOut(auth);
+                            alert('Sesión cerrada correctamente.');
+                            // The onAuthStateChanged listener will handle UI update automatically
+                        } catch (error) {
+                            console.error('Error al cerrar sesión:', error);
+                            alert('Error al cerrar sesión: ' + error.message);
+                        }
+                    });
+                }
+
+            } else {
+                // User is signed out
+                console.log('Ningún usuario autenticado.');
+                // Reset "Registrate o Accede" box
+                iniciarBox.innerHTML = 'Registrate o Accede';
+                iniciarBox.style.cursor = 'pointer';
+                iniciarBox.onclick = () => { window.location.href = 'Inicio.html'; }; // Direct to Inicio.html on click
+
+                // Reset profile image to default
+                profileImage.src = 'Perfil/Icon.png';
+                profileImageLink.href = 'Inicio.html'; // Direct to Inicio.html on click
+                profileImageLink.onclick = null; // Remove specific click handler
+            }
+        });
+
+        // Add event listener to the "Registrate o Accede" box initially
+        iniciarBox.addEventListener('click', () => {
+            if (!auth.currentUser) { // Only redirect if no user is signed in
+                window.location.href = 'Inicio.html';
+            }
+        });
+
+    </script>
 </body>
 </html>
