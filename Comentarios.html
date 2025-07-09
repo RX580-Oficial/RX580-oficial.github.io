@@ -1,90 +1,122 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zona de Comentarios</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://i.postimg.cc/YCj65T8t/background.png'); /* Fondo personalizado */
-            background-size: cover;
-            background-position: center;
-            color: #eee; /* Texto claro para contraste con fondo oscuro */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="Icon.png" type="image/png" />
+  <title>Zona de Comentarios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.postimg.cc/YCj65T8t/background.png');
+      background-size: cover;
+      background-position: center;
+      color: #eee;
+    }
 
-        /* Barra superior con imagen y mensaje */
-        .header {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y transparente */
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 80%;
-        }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 80%;
+    }
 
-        .header img {
-            width: 200px; /* Ajusta el tamaño de la imagen a 200x150px */
-            height: 150px;
-            margin-right: 20px;
-            border-radius: 8px; /* Bordes redondeados para la imagen */
-        }
+    .header img {
+      width: 200px;
+      height: 150px;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
 
-        .header h1 {
-            font-size: 2.5em; /* Tamaño más grande */
-            color: #fff; /* Color blanco para el texto */
-            font-weight: bold;
-        }
+    .header h1 {
+      font-size: 2.5em;
+      color: #fff;
+      font-weight: bold;
+    }
 
-        /* Estilo para el contenedor del formulario */
-        .form-container {
-            padding: 30px;
-            background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad */
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: 20px auto;
-        }
+    .form-container {
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.6);
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
 
-        /* Estilos para el texto "Escuchar Música" */
-        .music-text {
-            color: #007bff;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
+    .music-text {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
 
-        /* Estilos para el botón "Reproducir Música" */
-        .music-button {
-            background-color: #a020f0;
-            color: blue;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-        }
+    .comentarios {
+      margin-top: 40px;
+    }
 
-    </style>
+    .comentario {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-left: 5px solid #a020f0;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .comentario .nombre {
+      font-weight: bold;
+      color: #bb86fc;
+    }
+
+    .comentario .fecha {
+      font-size: 0.9em;
+      color: #999;
+    }
+
+  </style>
 </head>
 <body>
 
-    <!-- Barra superior con imagen y mensaje -->
-    <div class="header">
-        <img src="https://i.postimg.cc/SK6Cmrfr/image.png" alt="Logo">
-        <h1>Deja tu comentario</h1>
-    </div>
+  <div class="header">
+    <img src="https://i.postimg.cc/SK6Cmrfr/image.png" alt="Logo">
+    <h1>Deja tu comentario</h1>
+  </div>
 
-    <!-- Contenedor del formulario de Google -->
-    <div class="form-container">
-        <h2 class="music-text">Formulario de Comentarios</h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScOilg5BtlbHVWDuCa-m0Qu2afb-EgKRNTokBO2xfb2eZLnrw/viewform?usp=sharing&ouid=111524704443428428350" width="100%" height="600px" frameborder="0"></iframe>
-         <iframe src="https://docs.google.com/spreadsheets/d/1pq6--Ivp7hE73NDT7WPY0CpoF-AMekAkhbFcaiticcE/edit?usp=sharing" width="100%" height="600px" frameborder="0"></iframe>
+  <div class="form-container">
+    <h2 class="music-text">Formulario de Comentarios</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScOilg5BtlbHVWDuCa-m0Qu2afb-EgKRNTokBO2xfb2eZLnrw/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+
+    <div class="comentarios" id="comentarios">
+      <h2 class="music-text">Comentarios de otros usuarios</h2>
+      <!-- Aquí se insertarán los comentarios dinámicamente -->
     </div>
+  </div>
+
+  <script>
+    const contenedor = document.getElementById("comentarios");
+
+    fetch("https://script.google.com/macros/s/AKfycbzw_L72SODYupvLBwn2MvR51Ddf_Yi6xVeLX30f42pXf_LoLpO2hPut3ZcHVq-yRhA4/exec") // pon aquí tu URL real
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(com => {
+          const div = document.createElement("div");
+          div.className = "comentario";
+          div.innerHTML = `
+            <div class="nombre">${com["Nombre"] || "Anónimo"}</div>
+            <div class="fecha">${com["Marca temporal"]}</div>
+            <p>${com["Aquí puedes comentar."]}</p>
+          `;
+          contenedor.appendChild(div);
+        });
+      })
+      .catch(err => {
+        contenedor.innerHTML = "<p>Error cargando comentarios</p>";
+        console.error(err);
+      });
+  </script>
 
 </body>
 </html>
