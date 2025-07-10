@@ -97,18 +97,21 @@
   <script>
     const contenedor = document.getElementById("comentarios");
 
-    // Actualiza esta URL con la nueva que te dieron
-    fetch("https://script.google.com/macros/s/AKfycby7cFayTt8Obcu3fMuV1FXwbZjRgp9YW-jKk0odqQXkY2KW_CL4LAGIxntKQT5OCodo/exec")
+    fetch("https://script.google.com/macros/s/AKfycbxBfYPOfcD6sxbr2tMav797-xbH1yTtwmLpoND5JGohZ5HxGGdwMwMah0_anOibhB5N/exec")
       .then(response => response.json())
       .then(data => {
-        // Si los datos son correctos, los agregamos a la página
         data.forEach(com => {
           const div = document.createElement("div");
+          const fecha = new Date(com["Fecha"]);
+          const fechaFormateada = fecha.toLocaleDateString('es-ES', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+          });
+
           div.className = "comentario";
           div.innerHTML = `
-            <div class="nombre">${com["Nombre"] || "Anónimo"}</div>
-            <div class="fecha">${com["Fecha"] || "Sin fecha"}</div>
-            <p>${com["Comentario"] || "No se proporcionó comentario"}</p>
+            <div class="nombre">${com["Nombre"]}</div>
+            <div class="fecha">${fechaFormateada}</div>
+            <p>${com["Comentario"]}</p>
           `;
           contenedor.appendChild(div);
         });
